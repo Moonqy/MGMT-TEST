@@ -980,11 +980,11 @@ def swin_t(*, weights: Optional[Swin_T_Weights] = None, progress: bool = True, *
     weights = Swin_T_Weights.verify(weights)
 
     return _swin_transformer(
-        patch_size=[4, 4],
-        embed_dim=96,
+        patch_size=[4, 4，4],
+        embed_dim=32,
         depths=[2, 2, 6, 2],
         num_heads=[3, 6, 12, 24],
-        window_size=[7, 7],
+        window_size=[7, 7, 7],
         stochastic_depth_prob=0.2,
         weights=weights,
         progress=progress,
@@ -1017,11 +1017,11 @@ def swin_v2_t(*, weights: Optional[Swin_V2_T_Weights] = None, progress: bool = T
     weights = Swin_V2_T_Weights.verify(weights)
 
     return _swin_transformer(
-        patch_size=[4, 4],
-        embed_dim=96,
+        patch_size=[4, 4,4],
+        embed_dim=32,
         depths=[2, 2, 6, 2],
         num_heads=[3, 6, 12, 24],
-        window_size=[8, 8],
+        window_size=[8, 8, 8],
         stochastic_depth_prob=0.2,
         weights=weights,
         progress=progress,
