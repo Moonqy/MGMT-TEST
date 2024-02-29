@@ -289,6 +289,7 @@ if __name__ == "__main__":
             optimizer.step()
             epoch_loss += loss.item()
             #print(f"{step}/{epoch_len}, train_loss: {loss.item():.4f}")
+        model.eval()
         with torch.no_grad():
             y_pred = torch.tensor([], dtype=torch.float32, device=device)
             y = torch.tensor([], dtype=torch.long, device=device)
