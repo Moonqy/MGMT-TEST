@@ -91,11 +91,11 @@ ls=args.loss
 ty=args.type
 
 if args.segmented==1:
-    PATH_DATASET = '../../../../../brain-images/segImgs'
+    PATH_DATASET = 'your/segImgs'
     imgnum=333
     cache=1
 else:
-    PATH_DATASET = '../../../../../brain-images/UCSF-PDGM-v3'
+    PATH_DATASET = 'your/UNsegImgs'
     imgnum=371
     cache=0.7
 
@@ -128,9 +128,9 @@ elif args.type == 'DWI':
 
 
 if args.idh==0:
-    df_train = pd.read_csv(('../../../../../brain-images/UCSF-PDGM-v3/UCSF-MGMT.csv'),usecols=['ID', 'MGMT'])
+    df_train = pd.read_csv(('your.csv'),usecols=['ID', 'MGMT'])
 else:
-    df_train = pd.read_csv(('../../../../../brain-images/UCSF-PDGM-v3/UCSF-MGMT0.csv'),usecols=['ID', 'MGMT'])
+    df_train = pd.read_csv(('your.csv'),usecols=['ID', 'MGMT'])
 images = []
 
 def readIMGs(imgPath,csvFile,imgtype):#读取图像的地址
