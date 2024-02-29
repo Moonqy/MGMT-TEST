@@ -56,11 +56,11 @@ ls=args.loss
 ty=args.type
 
 if args.segmented==1:
-    PATH_DATASET = '../../../../../brain-images/segImgs'
+    PATH_DATASET = 'your/segImgs'
     batchnum=4
     num_workers=8
 else:
-    PATH_DATASET = '../../../../../brain-images/UCSF-PDGM-v3'
+    PATH_DATASET = 'your/UNsegImgs'
     batchnum=2
     num_workers=4
 
@@ -92,12 +92,12 @@ elif args.type == 'DWI':
 
 auc_metric = ROCAUCMetric()
 if args.idh==0:
-    df_train = pd.read_csv(('../../../../../brain-images/UCSF-PDGM-v3/UCSF-MGMTF-train.csv'),usecols=['ID', 'MGMT','fold'])
+    df_train = pd.read_csv(('your-train.csv'),usecols=['ID', 'MGMT','fold'])
     class_weights = [410/113,410/297]
     class_weights = torch.tensor(class_weights).to(device)
     weight_decay=0.01
 else:
-    df_train = pd.read_csv(('../../../../../brain-images/UCSF-PDGM-v3/UCSF-MGMT0F-train.csv'),usecols=['ID', 'MGMT','fold']) 
+    df_train = pd.read_csv(('your-train.csv'),usecols=['ID', 'MGMT','fold']) 
     class_weights=[369/109,369/260]
     class_weights = torch.tensor(class_weights).to(device)
     weight_decay=0.01
